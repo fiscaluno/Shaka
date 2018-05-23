@@ -1,0 +1,10 @@
+{
+  "name": "Shaka",
+  "description": "Course API",
+  "keywords": [
+    "fiscaluno",
+    "go"
+  ],
+  "website": "http://github.com/fiscaluno/shaka",
+  "repository": "http://github.com/fiscaluno/shaka"
+}

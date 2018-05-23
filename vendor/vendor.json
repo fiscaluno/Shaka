@@ -3,6 +3,14 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "7Noy2Ny1I1Xq7BfAdrcYm5eeT0s=",
+			"path": "github.com/fiscaluno/pandorabox",
+			"revision": "0c1d34a452c0326db82fcae78973819d5ec85b70",
+			"revisionTime": "2018-05-23T01:43:29Z",
+			"version": "0.4.0",
+			"versionExact": "0.4.0"
+		},
+		{
 			"checksumSHA1": "Ne2HHjBVT8tegOp3l3ataHYmq9M=",
 			"path": "github.com/gorilla/mux",
 			"revision": "07ba1fd60e210dc5cc6f86ec25dc9ecc7c95c295",

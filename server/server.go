@@ -4,8 +4,9 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/fiscaluno/pandorabox/mu"
+	"github.com/fiscaluno/shaka/course"
 	"github.com/fiscaluno/shaka/logs"
-	"github.com/fiscaluno/shaka/user"
 	"github.com/fiscaluno/shaka/util"
 	"github.com/gorilla/mux"
 )
@@ -13,19 +14,20 @@ import (
 var name string
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Ola, Seja bem vindo ao CRUDGo @" + name + " !!"))
+	w.Write([]byte("Ola, Seja bem vindo ao Shaka @" + name + " !!"))
 }
 
 // Listen init a http server
 func Listen() {
-	port := util.GetOSEnvironment("PORT", "5001")
+	port := util.GetOSEnvironment("PORT", "5002")
 
 	name = util.GetOSEnvironment("NAME", "JC")
 
 	r := mux.NewRouter()
 	r.Use(logs.LoggingMiddleware)
+	r.Use(mu.AuthMiddleware)
 
-	user.SetRoutes(r.PathPrefix("/users").Subrouter())
+	course.SetRoutes(r.PathPrefix("/courses").Subrouter())
 
 	r.HandleFunc("/", handler)
 	http.Handle("/", r)

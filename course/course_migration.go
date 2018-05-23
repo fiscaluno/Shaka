@@ -15,11 +15,11 @@ func Migrate() {
 
 	// Read
 	var course Course
-	db.First(&course, 1)               // find course with id 1
-	db.First(&course, "name = ?", "J") // find course with code l1212
+	db.First(&course, 1) // find course with id 1
+	db.First(&course, "name = ?", "J")
 
-	// Update - update course's price to 2000
-	db.Model(&course).Update("Name", "JC")
+	// Update - update course's
+	db.Model(&course).Update("name", "JC")
 
 	// Delete - delete course
 	// db.Delete(&course)

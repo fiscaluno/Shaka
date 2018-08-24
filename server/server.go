@@ -4,36 +4,40 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/fiscaluno/pandorabox/mu"
+	"github.com/fiscaluno/pandorabox"
+	"github.com/fiscaluno/pandorabox/logs"
 	"github.com/fiscaluno/shaka/course"
-	"github.com/fiscaluno/shaka/logs"
-	"github.com/fiscaluno/shaka/util"
+
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )
 
 var name string
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Ola, Seja bem vindo ao Shaka @" + name + " !!"))
+func handlerHi(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Ola, Seja bem vindo ao @" + name + " !!"))
 }
 
 // Listen init a http server
 func Listen() {
-	port := util.GetOSEnvironment("PORT", "5002")
+	port := pandorabox.GetOSEnvironment("PORT", "5001")
 
-	name = util.GetOSEnvironment("NAME", "JC")
+	name = pandorabox.GetOSEnvironment("NAME", "Shaka")
 
 	r := mux.NewRouter()
 	r.Use(logs.LoggingMiddleware)
-	r.Use(mu.AuthMiddleware)
 
-	course.SetRoutes(r.PathPrefix("/courses").Subrouter())
+	course.SetRoutes(r.PathPrefix("/course").Subrouter())
 
-	r.HandleFunc("/", handler)
+	r.HandleFunc("/", handlerHi)
 	http.Handle("/", r)
 
+	originsOk := handlers.AllowedOrigins([]string{"*"})
+	headersOk := handlers.AllowedHeaders([]string{"X-Client-ID", "Content-Type", "X-Requested-With"})
+	methodsOk := handlers.AllowedMethods([]string{"OPTIONS", "DELETE", "GET", "HEAD", "POST", "PUT"})
+
 	log.Println("Listen on port: " + port)
-	if err := http.ListenAndServe(":"+port, r); err != nil {
+	if err := http.ListenAndServe(":"+port, handlers.CORS(originsOk, headersOk, methodsOk)(r)); err != nil {
 		log.Fatal(err)
 	}
 }

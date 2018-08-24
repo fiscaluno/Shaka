@@ -5,34 +5,56 @@
 		{
 			"checksumSHA1": "7Noy2Ny1I1Xq7BfAdrcYm5eeT0s=",
 			"path": "github.com/fiscaluno/pandorabox",
-			"revision": "0c1d34a452c0326db82fcae78973819d5ec85b70",
-			"revisionTime": "2018-05-23T01:43:29Z",
-			"version": "0.4.0",
-			"versionExact": "0.4.0"
+			"revision": "8b1f0dff96c3087260e3ed76bf4bf62f723844fc",
+			"revisionTime": "2018-08-24T21:30:31Z"
 		},
 		{
-			"checksumSHA1": "Ne2HHjBVT8tegOp3l3ataHYmq9M=",
+			"checksumSHA1": "ZYpvR1neJ+wb3SC3ktYhyea4N1Q=",
+			"path": "github.com/fiscaluno/pandorabox/db",
+			"revision": "8b1f0dff96c3087260e3ed76bf4bf62f723844fc",
+			"revisionTime": "2018-08-24T21:30:31Z"
+		},
+		{
+			"checksumSHA1": "81VN20WDquye/apM52kQhgY65pQ=",
+			"path": "github.com/fiscaluno/pandorabox/logs",
+			"revision": "8b1f0dff96c3087260e3ed76bf4bf62f723844fc",
+			"revisionTime": "2018-08-24T21:30:31Z"
+		},
+		{
+			"checksumSHA1": "g/V4qrXjUGG9B+e3hB+4NAYJ5Gs=",
+			"path": "github.com/gorilla/context",
+			"revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
+			"revisionTime": "2016-08-17T18:46:32Z"
+		},
+		{
+			"checksumSHA1": "22kXObb09lweSbdIjPZGeLBjnkg=",
+			"path": "github.com/gorilla/handlers",
+			"revision": "7e0847f9db758cdebd26c149d0ae9d5d0b9c98ce",
+			"revisionTime": "2018-07-27T23:06:46Z"
+		},
+		{
+			"checksumSHA1": "STQSdSj2FcpCf0NLfdsKhNutQT0=",
 			"path": "github.com/gorilla/mux",
-			"revision": "07ba1fd60e210dc5cc6f86ec25dc9ecc7c95c295",
-			"revisionTime": "2018-02-26T05:11:51Z"
+			"revision": "e48e440e4c92e3251d812f8ce7858944dfa3331c",
+			"revisionTime": "2018-08-07T07:52:56Z"
 		},
 		{
-			"checksumSHA1": "lYUMiQOLvV+Okxcm1RQnot+c0ho=",
+			"checksumSHA1": "K2x9czFwwfYcB6GyZCqZmJsa7gE=",
 			"path": "github.com/jinzhu/gorm",
-			"revision": "52c5c8127cf4aeffde3e0aa9222640832075a90f",
-			"revisionTime": "2018-03-15T14:35:31Z"
+			"revision": "32455088f24d6b1e9a502fb8e40fdc16139dbea8",
+			"revisionTime": "2018-08-18T23:14:33Z"
 		},
 		{
-			"checksumSHA1": "Sf/CFFl00e8nN8DDKaT2dKLUaFI=",
+			"checksumSHA1": "0Pry12nZ6UQBd1iXEtszySSfFpI=",
 			"path": "github.com/jinzhu/gorm/dialects/postgres",
-			"revision": "52c5c8127cf4aeffde3e0aa9222640832075a90f",
-			"revisionTime": "2018-03-15T14:35:31Z"
+			"revision": "32455088f24d6b1e9a502fb8e40fdc16139dbea8",
+			"revisionTime": "2018-08-18T23:14:33Z"
 		},
 		{
 			"checksumSHA1": "4VZ1gLZHMumRjV3fclS1aX8S1aQ=",
 			"path": "github.com/jinzhu/gorm/dialects/sqlite",
-			"revision": "52c5c8127cf4aeffde3e0aa9222640832075a90f",
-			"revisionTime": "2018-03-15T14:35:31Z"
+			"revision": "32455088f24d6b1e9a502fb8e40fdc16139dbea8",
+			"revisionTime": "2018-08-18T23:14:33Z"
 		},
 		{
 			"checksumSHA1": "4eelJOSLZoDzLuaJvgilOBVNovU=",
@@ -41,34 +63,28 @@
 			"revisionTime": "2018-03-08T03:36:59Z"
 		},
 		{
-			"checksumSHA1": "V1a5/Ra9HXKNuArt5WKUqu+Jxt8=",
+			"checksumSHA1": "xvqMCXXlR74in/1c09UadpfXz9Y=",
 			"path": "github.com/lib/pq",
-			"revision": "88edab0803230a3898347e77b474f8c1820a1f20",
-			"revisionTime": "2018-02-01T18:47:07Z"
+			"revision": "4ded0e9383f75c197b3a2aaa6d590ac52df6fd79",
+			"revisionTime": "2018-08-23T06:29:44Z"
 		},
 		{
 			"checksumSHA1": "EnMmNGgpDa5sNw0Zs5RhvNDcP2g=",
 			"path": "github.com/lib/pq/hstore",
-			"revision": "88edab0803230a3898347e77b474f8c1820a1f20",
-			"revisionTime": "2018-02-01T18:47:07Z"
+			"revision": "4ded0e9383f75c197b3a2aaa6d590ac52df6fd79",
+			"revisionTime": "2018-08-23T06:29:44Z"
 		},
 		{
 			"checksumSHA1": "AU3fA8Sm33Vj9PBoRPSeYfxLRuE=",
 			"path": "github.com/lib/pq/oid",
-			"revision": "88edab0803230a3898347e77b474f8c1820a1f20",
-			"revisionTime": "2018-02-01T18:47:07Z"
+			"revision": "4ded0e9383f75c197b3a2aaa6d590ac52df6fd79",
+			"revisionTime": "2018-08-23T06:29:44Z"
 		},
 		{
-			"checksumSHA1": "zKDmGyNRpAeeTGXwzKEvy+UY/QQ=",
+			"checksumSHA1": "k8hCATgh5bXaZwDXk/Wm6air/ZQ=",
 			"path": "github.com/mattn/go-sqlite3",
-			"revision": "d5ffb5c0cca8778699a929b236766f4a7af674e8",
-			"revisionTime": "2017-11-22T00:24:37Z"
-		},
-		{
-			"checksumSHA1": "GtamqiJoL7PGHsN454AoffBFMa8=",
-			"path": "golang.org/x/net/context",
-			"revision": "a8b9294777976932365dabb6640cf1468d95c70f",
-			"revisionTime": "2017-11-29T19:21:16Z"
+			"revision": "3198c7714d5f8be941dd06c30208e623aa5abf90",
+			"revisionTime": "2018-08-24T14:21:20Z"
 		}
 	],
 	"rootPath": "github.com/fiscaluno/shaka"

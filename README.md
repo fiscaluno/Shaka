@@ -1,4 +1,4 @@
-# Shaka
+# Shaka ![build status](https://travis-ci.org/fiscaluno/shaka.svg?branch=master) ![Heroku](http://heroku-badge.herokuapp.com/?app=fiscaluno-shaka)
 Shaka - Course API
 
 

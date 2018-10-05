@@ -2,29 +2,34 @@ package course
 
 import "github.com/fiscaluno/pandorabox/db"
 
-// Migrate migration entity BD
+// Migrate migration entity DB
 func Migrate() {
 	db := db.Conn()
 	defer db.Close()
 
-	entity := new(Entity)
+	course := new(Course)
 
-	entity.Name = "JC"
+	course.Name = "Information Systems"
+	course.Type = "Bachelor"
+	course.Period = "nightly"
+	course.Semester = 8
+	course.MonthlyPaymentValue = 1000
+	course.AverageRating = 5
+	course.RatedByCount = 1
 
 	// Migrate the schema
-	db.AutoMigrate(&entity)
+	db.AutoMigrate(&course)
 
 	// Create
-	db.Create(&Entity{})
+	db.Create(&course)
 
 	// Read
-	// var entity Entity
-	db.First(&entity, 1) // find entity with id 1
-	// db.First(&entity, "name = ?", "JC") // find entity with name JC
+	// var course Entity
+	db.Find(&course)
 
-	// Update - update entity's Name to SI
-	db.Model(&entity).Update("Name", "SI")
+	// Update - update course's Name to Information Systems
+	db.Model(&course).Update("Name", "Information Systems")
 
-	// Delete - delete entity
-	db.Delete(&entity)
+	// Delete - delete course
+	db.Delete(&course)
 }

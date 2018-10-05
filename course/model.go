@@ -1,37 +1,42 @@
 package course
 
 import (
+	"time"
+
 	"github.com/fiscaluno/pandorabox/db"
 )
 
-// Course is a Entity
+// Course is a Course
 type Course struct {
-	Name          string  `json:"course_name"`
-	Type          string  `json:"course_type"`
-	AverageRating float64 `json:"course_average_rating"`
-	RatedByCount  int     `json:"course_rated_by_count"`
+	ID                  uint       `gorm:"primary_key" json:"id"`
+	Name                string     `json:"course_name"`
+	Type                string     `json:"course_type"`
+	AverageRating       float64    `json:"course_average_rating"`
+	RatedByCount        int        `json:"course_rated_by_count"`
+	Period              string     `json:"period"`
+	Semester            int        `json:"semester"`
+	MonthlyPaymentValue int        `json:"monthly_payment_value"`
+	CreatedAt           time.Time  `json:"created_at"`
+	UpdatedAt           time.Time  `json:"updated_at"`
+	DeletedAt           *time.Time `json:"deleted_at"`
 }
 
-// Entity is a course
-type Entity struct {
-	Course
-	db.CommonModelFields
+// TableName for course
+func (Course) TableName() string {
+	return "course"
 }
 
-// Entitys is Entity slice
-type Entitys []Entity
-
-// GetAll Entitys
-func GetAll() Entitys {
+// GetAll Courses
+func GetAll() []Course {
 	db := db.Conn()
 	defer db.Close()
-	var entitys Entitys
+	var entitys []Course
 	db.Find(&entitys)
 	return entitys
 }
 
-// Save a Entity
-func (entity Entity) Save() (Entity, error) {
+// Save a Course
+func (entity Course) Save() (Course, error) {
 	db := db.Conn()
 	defer db.Close()
 
@@ -40,24 +45,24 @@ func (entity Entity) Save() (Entity, error) {
 	return entity, nil
 }
 
-// GetByID a Entity
-func GetByID(id int) Entity {
+// GetByID a Course
+func GetByID(id int) Course {
 	db := db.Conn()
 	defer db.Close()
 
-	var entity Entity
+	var entity Course
 
 	db.Find(&entity, id)
 
 	return entity
 }
 
-// GetByQuery a Entity
-func GetByQuery(query string, value interface{}) Entitys {
+// GetByQuery a Course
+func GetByQuery(query string, value interface{}) []Course {
 	db := db.Conn()
 	defer db.Close()
 
-	var entitys Entitys
+	var entitys []Course
 
 	db.Find(&entitys, query, value)
 	return entitys

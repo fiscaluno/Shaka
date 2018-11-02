@@ -27,7 +27,7 @@ func Listen() {
 	r := mux.NewRouter()
 	r.Use(logs.LoggingMiddleware)
 
-	course.SetRoutes(r.PathPrefix("/course").Subrouter())
+	course.SetRoutes(r.PathPrefix("/courses").Subrouter())
 
 	r.HandleFunc("/", handlerHi)
 	http.Handle("/", r)

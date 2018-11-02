@@ -56,7 +56,7 @@ func Add(w http.ResponseWriter, r *http.Request) {
 	db := db.Conn()
 	defer db.Close()
 
-	var entity Entity
+	var entity Course
 	var msg pandorabox.Message
 
 	msg = pandorabox.Message{
@@ -86,7 +86,7 @@ func DeleteByID(w http.ResponseWriter, r *http.Request) {
 	db := db.Conn()
 	defer db.Close()
 
-	var entity Entity
+	var entity Course
 	var msg pandorabox.Message
 
 	msg = pandorabox.Message{
@@ -129,7 +129,7 @@ func UpdateByID(w http.ResponseWriter, r *http.Request) {
 	db := db.Conn()
 	defer db.Close()
 
-	var entity Entity
+	var entity Course
 	var msg pandorabox.Message
 
 	msg = pandorabox.Message{
@@ -170,28 +170,6 @@ func UpdateByID(w http.ResponseWriter, r *http.Request) {
 	}
 
 	msg = pandorabox.Message{
-		Content: "Not exist this Course",
-		Status:  "ERROR",
-		Body:    nil,
-	}
-	pandorabox.RespondWithJSON(w, http.StatusOK, msg)
-
-}
-
-// FindByFacebookID find a entity by FacebookID
-func FindByFacebookID(w http.ResponseWriter, r *http.Request) {
-
-	vars := mux.Vars(r)
-
-	FacebookID := vars["id"]
-	entitys := GetByQuery("facebook_id = ?", FacebookID)
-
-	if len(entitys) >= 0 {
-		pandorabox.RespondWithJSON(w, http.StatusOK, entitys)
-		return
-	}
-
-	msg := pandorabox.Message{
 		Content: "Not exist this Course",
 		Status:  "ERROR",
 		Body:    nil,

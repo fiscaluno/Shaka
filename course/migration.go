@@ -31,5 +31,5 @@ func Migrate() {
 	db.Model(&course).Update("Name", "Information Systems")
 
 	// Delete - delete course
-	db.Delete(&course)
+	//db.Delete(&course)
 }

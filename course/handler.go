@@ -13,8 +13,19 @@ import (
 
 // FindAll entitys
 func FindAll(w http.ResponseWriter, r *http.Request) {
-	entitys := GetAll()
-	pandorabox.RespondWithJSON(w, http.StatusOK, entitys)
+	var entities []Course
+
+	name := r.URL.Query().Get("name")
+	institution := r.URL.Query().Get("institutionId")
+
+	switch {
+	case name == "" && institution == "":
+		entities = GetAll()
+	default:
+		entities = GetByQuery("institution_id = ? AND name LIKE ? ", institution, "%"+name+"%")
+	}
+
+	pandorabox.RespondWithJSON(w, http.StatusOK, entities)
 }
 
 // FindByID find a entity by ID

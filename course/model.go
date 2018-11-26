@@ -61,12 +61,12 @@ func GetByID(id int) Course {
 }
 
 // GetByQuery a Course
-func GetByQuery(query string, value interface{}) []Course {
+func GetByQuery(query string, value ...interface{}) []Course {
 	db := db.Conn()
 	defer db.Close()
 
-	var entitys []Course
+	var entitie []Course
 
-	db.Find(&entitys, query, value)
-	return entitys
+	db.Where(query, value...).Find(&entitie)
+	return entitie
 }

@@ -18,17 +18,17 @@ func Migrate() {
 	course.RatedByCount = 1
 
 	// Migrate the schema
-	db.AutoMigrate(&course)
+	db.AutoMigrate(&Course{})
 
 	// Create
-	db.Create(&course)
+	// db.Create(&course)
 
 	// Read
 	// var course Entity
-	db.Find(&course)
+	// db.Find(&course)
 
 	// Update - update course's Name to Information Systems
-	db.Model(&course).Update("Name", "Information Systems")
+	// db.Model(&course).Update("Name", "Information Systems")
 
 	// Delete - delete course
 	//db.Delete(&course)

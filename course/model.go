@@ -19,6 +19,9 @@ type Course struct {
 	CreatedAt           time.Time  `json:"created_at"`
 	UpdatedAt           time.Time  `json:"updated_at"`
 	DeletedAt           *time.Time `json:"deleted_at"`
+	InstitutionID       int        `json:"institution_id"`
+	InstitutionName     string     `json:"institution_name"`
+	InstitutionImageURL string     `json:"institution_image_url"`
 }
 
 // TableName for course

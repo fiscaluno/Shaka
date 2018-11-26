@@ -65,8 +65,8 @@ func GetByQuery(query string, value ...interface{}) []Course {
 	db := db.Conn()
 	defer db.Close()
 
-	var entitie []Course
+	var entities []Course
 
-	db.Where(query, value...).Find(&entitie)
-	return entitie
+	db.Where(query, value...).Find(&entities)
+	return entities
 }

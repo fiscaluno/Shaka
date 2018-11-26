@@ -19,10 +19,14 @@ func FindAll(w http.ResponseWriter, r *http.Request) {
 	institution := r.URL.Query().Get("institutionId")
 
 	switch {
-	case name == "" && institution == "":
-		entities = GetAll()
-	default:
+	case name != "" && institution != "":
 		entities = GetByQuery("institution_id = ? AND name LIKE ? ", institution, "%"+name+"%")
+	case name != "":
+		entities = GetByQuery("name LIKE ? ", "%"+name+"%")
+	case institution != "":
+		entities = GetByQuery("institution_id = ? ", institution)
+	default:
+		entities = GetAll()
 	}
 
 	pandorabox.RespondWithJSON(w, http.StatusOK, entities)

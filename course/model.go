@@ -8,7 +8,7 @@ import (
 
 // Course is a Course
 type Course struct {
-	ID                  uint       `gorm:"primary_key" json:"id"`
+	ID                  uint       `gorm:"primary_key" json:"course_id"`
 	Name                string     `json:"course_name"`
 	Type                string     `json:"course_type"`
 	AverageRating       float64    `json:"course_average_rating"`
